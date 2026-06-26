@@ -1,29 +1,25 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// hypercube graph
+// reflection
 
-bool vis[1<<16];
- 
-void dfs(int x, int N) {
-     vis[x] = 1;
+void printout(int m, int N) {
      string S = "";
      for (int i = 0; i < N; i++) {
-          if (x & (1 << i)) S += "1";
+          if (m & (1 << i)) S += "1";
           else S += "0";
      }
      cout << S << "\n";
-     for (int i = 0; i < N; i++) {
-          int y = x ^ (1 << i);
-          if (!vis[y]) dfs(y, N);
-     }
 }
 
 int main() {
      ios_base::sync_with_stdio(0); cin.tie(0);
      
      int N; cin >> N;
-     dfs(0, N);
-
+     for (int m = 0; m < (1<<N); m++) {
+          int i = m ^ (m >> 1);
+          printout(i, N);
+     }
+     
      return 0;
 }
