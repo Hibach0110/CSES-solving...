@@ -11,5 +11,6 @@ int main() {
      for (int &x : a) cin >> x;
      
 
+     
      return 0;
 }
