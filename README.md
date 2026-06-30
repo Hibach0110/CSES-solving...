@@ -1,5 +1,3 @@
-# CSES Solutions
-
 | Problem Type | Number Solved |
 | :--- | :---: |
 | Introductory Problems | 24/24 |
